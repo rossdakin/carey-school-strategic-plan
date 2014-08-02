@@ -62,7 +62,11 @@ textarea {
    ========================================================================== */
 
 body {
-  font: 16px/26px Helvetica, Helvetica Neue, Arial;
+  font: 16px Helvetica, Helvetica Neue, Arial;
+}
+
+p, li {
+  line-height: 1.625em;
 }
 
 .wrapper {
@@ -71,38 +75,46 @@ body {
 }
 
 /* ===================
-   ALL: Orange Theme
+   ALL: Theme
    =================== */
 
 .header-container {
-  border-bottom: 20px solid #e44d26;
+  padding: 2% 0;
+  border-bottom: 1em solid #777A7F;
 }
 
-.footer-container,
-.main aside {
-  border-top: 20px solid #e44d26;
+.footer-container {
+  border-top: 20px solid #777A7F;
+}
+
+.footer-container h4 {
+  text-align: center;
 }
 
 .header-container,
-.footer-container,
-.main aside {
-  background: #f16529;
+.footer-container {
+  background: #888A8F;
 }
 
 .title {
   color: white;
+  text-align: center;
+}
+
+h2.title {
+  font-weight: normal;
 }
 
 /* ==============
    MOBILE: Menu
    ============== */
 
-nav ul {
+nav.textual ul {
   margin: 0;
   padding: 0;
 }
 
-nav a {
+nav.textual a {
   display: block;
   margin-bottom: 10px;
   padding: 15px 0;
@@ -112,16 +124,21 @@ nav a {
   font-weight: bold;
 
   color: white;
-  background: #e44d26;
+  background: #ce1d3e;
 }
 
-nav a:hover,
-nav a:visited {
+nav.textual a:hover,
+nav.textual a:visited {
   color: white;
 }
 
-nav a:hover {
+nav.textual a:hover {
   text-decoration: underline;
+}
+
+nav.graphical {
+  display: none;
+  padding-bottom: 2em;
 }
 
 /* ==============
@@ -136,9 +153,16 @@ nav a:hover {
   font-size: 2em;
 }
 
-.main aside {
-  color: white;
-  padding: 0px 5% 10px;
+.main article h2 {
+  font-weight: normal;
+}
+
+.main article h2 strong {
+  font-weight: bold;
+}
+
+.main article h2:after {
+  content: "…";
 }
 
 .footer-container footer {
@@ -183,79 +207,37 @@ a.need-url {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 641px) {
 
   /* ====================
-     INTERMEDIATE: Menu
+     INTERMEDIATE
      ==================== */
 
-  nav a {
-    float: left;
-    width: 27%;
-    margin: 0 1.7%;
-    padding: 25px 2%;
-    margin-bottom: 0;
+  .header-container {
+    border-bottom: 0;
   }
 
-  nav li:first-child a {
-    margin-left: 0;
+  .footer-container {
+    border-top: 0;
   }
-
-  nav li:last-child a {
-    margin-right: 0;
-  }
-
-  /* ========================
-     INTERMEDIATE: IE Fixes
-     ======================== */
-
-  nav ul li {
-    display: inline;
-  }
-
-  .oldie nav a {
-    margin: 0 0.7%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-
-  /* ====================
-     WIDE: CSS3 Effects
-     ==================== */
 
   .header-container,
-  .main aside {
-    -webkit-box-shadow: 0 5px 10px #aaa;
-    -moz-box-shadow: 0 5px 10px #aaa;
-    box-shadow: 0 5px 10px #aaa;
+  .footer-container {
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
   }
 
-  /* ============
-     WIDE: Menu
-     ============ */
-
-  .title {
-    float: left;
+  nav.textual {
+    display: none;
   }
 
-  nav {
-    float: right;
-    width: 38%;
+  nav.graphical {
+    display: block;
   }
 
-  /* ============
-     WIDE: Main
-     ============ */
-
-  .main article {
-    float: left;
-    width: 57%;
-  }
-
-  .main aside {
-    float: right;
-    width: 28%;
+  nav.graphical img {
+    max-width: 100%;
   }
 }
 
@@ -274,6 +256,10 @@ a.need-url {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.nobr {
+  white-space: nowrap;
+}
 
 .ir {
   background-color: transparent;

@@ -214,6 +214,10 @@ a.need-url {
      INTERMEDIATE
      ==================== */
 
+  body {
+    display: none;
+  }
+
   .header-container {
     border-bottom: 0;
   }

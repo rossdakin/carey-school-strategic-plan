@@ -158,7 +158,14 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+a {
+  color: blue;
+}
 
+a.need-url {
+  color: red;
+  font-style: italic;
+}
 
 
 

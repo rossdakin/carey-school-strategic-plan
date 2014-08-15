@@ -20,7 +20,6 @@ function moveBallTo(id) {
   };
 
   $.each(classes, function(klass, css) {
-    console.debug(klass, css);
     if (klass === id) {
       $ball.addClass(klass);
       $ball.css(css);
@@ -59,5 +58,9 @@ $(function() {
     $(this).removeClass('hover');
   }).click(function(e) {
     showPage($(this).data('id'));
+  });
+
+  $('.main article nav a').click(function(e) {
+    showPage($(this).attr('href').substr(1));
   });
 });

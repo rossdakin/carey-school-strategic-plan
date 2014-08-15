@@ -175,6 +175,26 @@ nav.graphical {
   max-width: 30%;
 }
 
+.main article nav {
+  margin-top: 2em;
+}
+
+.main article nav .prev {
+  float: left;
+}
+
+.main article nav .next {
+  float: right;
+}
+
+.main article nav .prev::before {
+  content: '←';
+}
+
+.main article nav .next::after {
+  content: '→';
+}
+
 .footer-container footer {
   color: white;
   padding: 20px 0;

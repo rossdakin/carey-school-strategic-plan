@@ -33,7 +33,7 @@ function moveBallTo(id) {
 function showPage(id) {
   var scrollSpeed = 1000;
 
-  $.scrollTo(0, $('.main-container:visible').length ? scrollSpeed : 0, {
+  $.scrollTo(0, $('.main-container:visible').length ? 200 : 0, {
     onAfter: function() {
       $('.main-container').hide();
       $('article').hide();
@@ -43,7 +43,7 @@ function showPage(id) {
       window.setTimeout(function() {
         $('article#' + id).show();
         $('.main-container').show();
-        $.scrollTo('.main-container', scrollSpeed);
+        $.scrollTo('.main-container', 1000);
       }, 1000);
     }
   });

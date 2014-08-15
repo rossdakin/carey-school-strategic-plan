@@ -58,11 +58,7 @@ imagesLoaded('body', function() {
 });
 
 $(function() {
-  $('.click-target', 'nav.graphical').hover(function(e) {
-    $(this).addClass('hover');
-  }, function(e) {
-    $(this).removeClass('hover');
-  }).click(function(e) {
+  $('.click-target', 'nav.graphical').click(function(e) {
     showPage($(this).data('id'));
   });
 

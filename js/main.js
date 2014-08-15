@@ -40,7 +40,13 @@ function showPage(id) {
     }, 1000);
   }
 
-  if ($('body').scrollTop() || window.scrollY) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/Window.scrollY
+  var y = (window.pageYOffset !== undefined) ? window.pageYOffset :
+    (document.documentElement ||
+     document.body.parentNode ||
+     document.body).scrollTop;
+
+  if (y) {
     $.scrollTo(0, 500, { onAfter: go });
   } else {
     go();

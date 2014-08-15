@@ -155,10 +155,12 @@ nav.graphical {
 }
 
 .main article h2 {
-  font-weight: normal;
+  color: gray;
+  font-weight: lighter;
 }
 
 .main article h2 strong {
+  color: #ce1d3e;
   font-weight: bold;
 }
 

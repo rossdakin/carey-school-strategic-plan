@@ -274,7 +274,7 @@ a.need-url {
   }
 
   nav.graphical #ball {
-    top: -100%;
+    top: -200%;
     position: absolute;
     transition: 1s;
   }

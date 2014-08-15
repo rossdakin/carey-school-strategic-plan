@@ -3,7 +3,7 @@ function moveBallTo(id) {
   var classes = {
     i: {
       left: '37%',
-      top: '58%'
+      top: '57%'
     },
     ii: {
       left: '39%',
@@ -11,7 +11,7 @@ function moveBallTo(id) {
     },
     iii: {
       left: '56%',
-      top: '59%'
+      top: '57%'
     },
     iv: {
       left: '56%',
@@ -31,22 +31,21 @@ function moveBallTo(id) {
 }
 
 function showPage(id) {
-  var scrollSpeed = 1000;
+  function go() {
+    moveBallTo(id);
+    window.setTimeout(function() {
+      $('article').hide().find('#' + id).show();
+      $('article#' + id).show();
+      $('.main-container').show();
+      $.scrollTo('.main-container', 1000);
+    }, 1000);
+  }
 
-  $.scrollTo(0, $('.main-container:visible').length ? 200 : 0, {
-    onAfter: function() {
-      $('.main-container').hide();
-      $('article').hide();
-
-      moveBallTo(id);
-
-      window.setTimeout(function() {
-        $('article#' + id).show();
-        $('.main-container').show();
-        $.scrollTo('.main-container', 1000);
-      }, 1000);
-    }
-  });
+  if ($('body').scrollTop()) {
+    $.scrollTo(0, 500, { onAfter: go });
+  } else {
+    go();
+  }
 }
 
 imagesLoaded('body', function() {

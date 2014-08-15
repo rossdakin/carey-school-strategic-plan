@@ -176,6 +176,7 @@ nav.graphical {
 }
 
 .main article nav {
+  display: none;
   margin-top: 2em;
 }
 
@@ -280,6 +281,10 @@ a.need-url {
 
   article {
     display: none;
+  }
+
+  .main article nav {
+    display: block;
   }
 
   nav.textual {

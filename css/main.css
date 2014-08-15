@@ -166,6 +166,13 @@ nav.graphical {
   content: "…";
 }
 
+.main article header img {
+  float: right;
+  margin: 1em 0 1em 1em;
+  max-height: 350px;
+  max-width: 30%;
+}
+
 .footer-container footer {
   color: white;
   padding: 20px 0;

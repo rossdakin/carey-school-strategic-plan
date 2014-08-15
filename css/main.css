@@ -175,27 +175,6 @@ nav.graphical {
   max-width: 30%;
 }
 
-.main article nav {
-  display: none;
-  margin-top: 2em;
-}
-
-.main article nav .prev {
-  float: left;
-}
-
-.main article nav .next {
-  float: right;
-}
-
-.main article nav .prev::before {
-  content: '←';
-}
-
-.main article nav .next::after {
-  content: '→';
-}
-
 .home {
   color: white;
   padding: 1em;
@@ -318,7 +297,23 @@ a.need-url {
   }
 
   .main article nav {
-    display: block;
+    margin-top: 2em;
+  }
+
+  .main article nav .prev {
+    float: left;
+  }
+
+  .main article nav .next {
+    float: right;
+  }
+
+  .main article nav .prev::before {
+    content: '←';
+  }
+
+  .main article nav .next::after {
+    content: '→';
   }
 
   nav.textual {

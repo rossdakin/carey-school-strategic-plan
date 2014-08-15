@@ -225,6 +225,20 @@ a.need-url {
     display: none;
   }
 
+  .main article header img {
+    margin: 1em 1em 2em 2em;
+  }
+
+  body {
+    background-image: url("../img/bg.jpg");
+    background-position: top center;
+  }
+
+  .header-container,
+  .footer-container {
+    background: transparent;
+  }
+
   .header-container {
     border-bottom: 0;
   }
@@ -233,11 +247,17 @@ a.need-url {
     border-top: 0;
   }
 
-  .header-container,
-  .footer-container {
-    background-image: url("../img/bg.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
+  .main-container {
+    background-color: white;
+    display: none;
+
+    -webkit-box-shadow: 0 0 50px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0 0 50px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0 0 50px 0px rgba(50, 50, 50, 0.75);
+  }
+
+  article {
+    display: none;
   }
 
   nav.textual {
@@ -246,10 +266,63 @@ a.need-url {
 
   nav.graphical {
     display: block;
+    position: relative;
   }
 
   nav.graphical img {
     max-width: 100%;
+  }
+
+  nav.graphical #ball {
+    top: -100%;
+    position: absolute;
+    transition: 1s;
+  }
+
+  nav.graphical #ball.i,
+  nav.graphical #ball.iii {
+    max-height: 16.3%;
+  }
+
+  nav.graphical #ball.ii,
+  nav.graphical #ball.iv {
+    max-height: 12.8%;
+  }
+
+  nav.graphical .click-target {
+    cursor: pointer;
+    position: absolute;
+  }
+
+  nav.graphical .click-target.hover {
+  }
+
+  nav.graphical .click-target.i {
+    height: 42%;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+  }
+
+  nav.graphical .click-target.ii {
+    height: 58%;
+    width: 50%;
+    top: 0;
+    left: 0;
+  }
+
+  nav.graphical .click-target.iii {
+    height: 42%;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+  }
+
+  nav.graphical .click-target.iv {
+    height: 58%;
+    width: 50%;
+    top: 0;
+    right: 0;
   }
 }
 

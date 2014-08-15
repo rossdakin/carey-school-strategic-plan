@@ -124,7 +124,7 @@ nav.textual a {
   font-weight: bold;
 
   color: white;
-  background: #ce1d3e;
+  background: #cc0000;
   font-size: 14px;
 }
 
@@ -160,7 +160,7 @@ nav.graphical {
 }
 
 .main article h2 strong {
-  color: #ce1d3e;
+  color: #cc0000;
   font-weight: bold;
 }
 

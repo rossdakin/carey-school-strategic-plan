@@ -40,7 +40,7 @@ function showPage(id) {
     }, 1000);
   }
 
-  if ($('body').scrollTop()) {
+  if ($('body').scrollTop() || window.scrollY) {
     $.scrollTo(0, 500, { onAfter: go });
   } else {
     go();

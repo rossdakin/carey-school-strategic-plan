@@ -196,6 +196,25 @@ nav.graphical {
   content: '→';
 }
 
+.home {
+  color: white;
+  padding: 1em;
+  text-decoration: none;
+  position: relative;
+  top: .5em;
+  left: 2%;
+}
+
+.home:hover {
+  text-decoration: underline;
+}
+
+.home img {
+  height: 40px;
+  width: 40px;
+  margin-right: .5em;
+}
+
 .footer-container footer {
   color: white;
   padding: 20px 0;
@@ -257,12 +276,23 @@ a.need-url {
     background-position: top center;
   }
 
+  .home {
+    position: absolute;
+    top: 1.4em;
+    left: 5%;
+  }
+
+  h1.title {
+    padding: 0 4em; /* so it doesn't overlap with home link */
+  }
+
   .header-container,
   .footer-container {
     background: transparent;
   }
 
   .header-container {
+    position: relative;
     border-bottom: 0;
   }
 

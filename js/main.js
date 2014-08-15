@@ -1,3 +1,3 @@
-jQuery(function($) {
+imagesLoaded('body', function() {
   $('body').fadeIn('slow');
 });

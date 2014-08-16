@@ -160,11 +160,13 @@ nav.graphical {
 
 .main article h2 {
   color: gray;
+  font-style: italic;
   font-weight: lighter;
 }
 
 .main article h2 strong {
   color: #cc0000;
+  font-style: normal;
   font-weight: bold;
 }
 

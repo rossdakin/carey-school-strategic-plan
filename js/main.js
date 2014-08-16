@@ -70,8 +70,25 @@ imagesLoaded('body', function() {
 });
 
 $(function() {
-  $('.click-target', 'nav.graphical').click(function(e) {
-    showPage($(this).data('id'));
+  $('nav.graphical').click(function(e) {
+    var $target = $(this)[0];
+
+    // polyfill for FireFox, ugh.
+    e.offsetX = e.offsetX || (e.pageX - $(e.target).offset().left);
+    e.offsetY = e.offsetY || (e.pageY - $(e.target).offset().top);
+
+    var offsetPercentX = 1.0 * e.offsetX / $target.offsetWidth;
+    var offsetPercentY = 1.0 * e.offsetY / $target.offsetHeight;
+    var midpointPercents = {
+      x: 0.50,
+      y: 0.58
+    };
+
+    if (offsetPercentX < midpointPercents.x) {
+      showPage(offsetPercentY < midpointPercents.y ? 'ii' : 'i');
+    } else {
+      showPage(offsetPercentY < midpointPercents.y ? 'iv' : 'iii');
+    }
   });
 
   $('header nav.textual a').click(function(e) {

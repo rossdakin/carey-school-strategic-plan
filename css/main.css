@@ -345,6 +345,7 @@ a.need-url {
   }
 
   nav.graphical {
+    cursor: pointer;
     display: block;
     position: relative;
   }
@@ -367,39 +368,6 @@ a.need-url {
   nav.graphical #ball.ii,
   nav.graphical #ball.iv {
     max-height: 12.8%;
-  }
-
-  nav.graphical .click-target {
-    cursor: pointer;
-    position: absolute;
-  }
-
-  nav.graphical .click-target.i {
-    height: 42%;
-    width: 50%;
-    bottom: 0;
-    left: 0;
-  }
-
-  nav.graphical .click-target.ii {
-    height: 58%;
-    width: 50%;
-    top: 0;
-    left: 0;
-  }
-
-  nav.graphical .click-target.iii {
-    height: 42%;
-    width: 50%;
-    bottom: 0;
-    right: 0;
-  }
-
-  nav.graphical .click-target.iv {
-    height: 58%;
-    width: 50%;
-    top: 0;
-    right: 0;
   }
 
   .article-footer-container {

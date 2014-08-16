@@ -101,6 +101,10 @@ p, li {
   text-align: center;
 }
 
+h1.title {
+  clear: both;
+}
+
 h2.title {
   font-weight: normal;
 }
@@ -175,15 +179,20 @@ nav.graphical {
   max-width: 30%;
 }
 
+.download,
 .home {
   color: white;
   padding: 1em;
   text-decoration: none;
-  position: relative;
   top: .5em;
+}
+
+.home {
+  float: left;
   left: 2%;
 }
 
+.download:hover,
 .home:hover {
   text-decoration: underline;
 }
@@ -192,6 +201,17 @@ nav.graphical {
   height: 40px;
   width: 40px;
   margin-right: .5em;
+}
+
+.download {
+  float: right;
+  right: 2%;
+}
+
+.download img {
+  height: 40px;
+  width: 40px;
+  margin-left: .5em;
 }
 
 .footer-container footer {
@@ -259,14 +279,22 @@ a.need-url {
     background-position: top center;
   }
 
+  .download,
   .home {
     position: absolute;
     top: 1.4em;
+  }
+
+  .download {
+    right: 5%;
+  }
+
+  .home {
     left: 5%;
   }
 
   h1.title {
-    padding: 0 4em; /* so it doesn't overlap with home link */
+    padding: 0 5em; /* so it doesn't overlap with home link */
   }
 
   .header-container,

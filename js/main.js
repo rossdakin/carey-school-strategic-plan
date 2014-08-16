@@ -29,15 +29,21 @@ function moveBallTo(id) {
   });
 }
 
-function showPage(id) {
-  function go() {
+function showPage(id, scrollInstantly, moveBallAnyway) {
+  function go(scrollSpeed, moveBall) {
+    $('article').hide().find('#' + id).show();
+    $('article#' + id).show();
+    $('.main-container').show();
+    $.scrollTo('.main-container', scrollSpeed || 0);
+
+    if (moveBall) {
+      moveBallTo(id);
+    }
+  }
+
+  function animate() {
     moveBallTo(id);
-    window.setTimeout(function() {
-      $('article').hide().find('#' + id).show();
-      $('article#' + id).show();
-      $('.main-container').show();
-      $.scrollTo('.main-container', 1000);
-    }, 1000);
+    window.setTimeout(function() { go(1000); }, 1000);
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/Window.scrollY
@@ -46,10 +52,16 @@ function showPage(id) {
      document.body.parentNode ||
      document.body).scrollTop;
 
-  if (y) {
-    $.scrollTo(0, 500, { onAfter: go });
+  if (scrollInstantly) {
+    go(0, moveBallAnyway);
+/* Ignore this for now, since the top of the page is currently the only
+ * place from which an animated page change may be triggered (so we never
+ * need to scroll to the top, as we can assume the user can already see it).
+  } else if (y) {
+    $.scrollTo(0, 500, { onAfter: animate });
+*/
   } else {
-    go();
+    animate();
   }
 }
 
@@ -62,7 +74,11 @@ $(function() {
     showPage($(this).data('id'));
   });
 
+  $('header nav.textual a').click(function(e) {
+    showPage($(this).attr('href').substr(1), true);
+  });
+
   $('.main article nav a').click(function(e) {
-    showPage($(this).attr('href').substr(1));
+    showPage($(this).attr('href').substr(1), true, true);
   });
 });

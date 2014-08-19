@@ -293,8 +293,8 @@ a.need-url {
 
   body {
     display: none;
-    background-image: url("../img/bg.jpg");
-    background-position: top center;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .main article header img {
@@ -321,14 +321,25 @@ a.need-url {
 
   .header-container,
   .footer-container {
-    background: transparent;
+    background-image: url("../img/bg.jpg");
+    background-position: top center;
+    background-attachment: fixed;
   }
 
   .header-container {
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+  }
+
+  .footer-container {
+    display: none;
   }
 
   .main-container {
+    margin: 0 5%;
     border: 0;
 
     -webkit-box-shadow: 0 0 50px 0px rgba(50, 50, 50, 0.75);

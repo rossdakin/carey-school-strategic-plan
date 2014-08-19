@@ -34,7 +34,7 @@ function showPage(id, scrollInstantly, moveBallAnyway) {
     $('article').hide().find('#' + id).show();
     $('article#' + id).show();
     $('.main-container').show();
-    $.scrollTo('.main-container', scrollSpeed || 0);
+    $.scrollTo('.main-container', scrollSpeed || 0, { offset: -25 });
 
     if (moveBall) {
       moveBallTo(id);
@@ -54,12 +54,8 @@ function showPage(id, scrollInstantly, moveBallAnyway) {
 
   if (scrollInstantly) {
     go(0, moveBallAnyway);
-/* Ignore this for now, since the top of the page is currently the only
- * place from which an animated page change may be triggered (so we never
- * need to scroll to the top, as we can assume the user can already see it).
   } else if (y) {
     $.scrollTo(0, 500, { onAfter: animate });
-*/
   } else {
     animate();
   }
@@ -70,7 +66,21 @@ imagesLoaded('body', function() {
 });
 
 $(function() {
+  var graphicalNavClickedYet = false;
+
   $('nav.graphical').click(function(e) {
+    if (!graphicalNavClickedYet) {
+      graphicalNavClickedYet = true;
+
+      $(window).resize(function() {
+        var windowHeight = $(window).height();
+
+        $('.main-container').css({
+          'margin-top': (windowHeight + 100) + 'px'
+        });
+      }).resize();
+    }
+
     var $target = $(this)[0];
 
     // polyfill for FireFox, ugh.
@@ -96,6 +106,9 @@ $(function() {
   });
 
   $('.main article nav a').click(function(e) {
-    showPage($(this).attr('href').substr(1), true, true);
+    var instantly = !graphicalNavClickedYet;
+    var moveBallAnyway = graphicalNavClickedYet;
+
+    showPage($(this).attr('href').substr(1), instantly, moveBallAnyway);
   });
 });

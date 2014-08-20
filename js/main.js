@@ -31,10 +31,12 @@ function moveBallTo(id) {
 
 function showPage(id, scrollInstantly, moveBallAnyway) {
   function go(scrollSpeed, moveBall) {
+    var offset = scrollSpeed ? -25 : 20;
+
     $('article').hide().find('#' + id).show();
     $('article#' + id).show();
     $('.main-container').show();
-    $.scrollTo('.main-container', scrollSpeed || 0, { offset: -25 });
+    $.scrollTo('.main-container', scrollSpeed || 0, { offset: offset });
 
     if (moveBall) {
       moveBallTo(id);

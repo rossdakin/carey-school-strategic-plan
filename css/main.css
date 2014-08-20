@@ -199,9 +199,37 @@ article,
 
 .main article header img {
   float: right;
-  margin: 1em 0 1em 1em;
+  margin: 0 0 1em 1em;
   max-height: 350px;
-  max-width: 30%;
+  max-width: 25%;
+}
+
+.speech-bubble-wrapper {
+  position: relative;
+  max-width: 60%;
+}
+
+.speech-bubble {
+  background-color: #666;
+  box-sizing: border-box;
+  color: white;
+  padding: 1em;
+
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 10px 0 10px 30px;
+  border-color: transparent #666;
+  display: block;
+  width: 0;
+  top: 15%;
+  right: -30px;
 }
 
 .download,
@@ -402,6 +430,28 @@ a.need-url {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .speech-bubble-wrapper {
+    max-width: 65%;
+  }
+
+  .speech-bubble:after {
+    bottom: 30%;
+    top: auto;
+  }
+}
+
+@media only screen and (min-width: 954px) {
+  .speech-bubble-wrapper {
+    max-width: 70%;
+  }
+
+  .speech-bubble:after {
+    bottom: 30%;
+    top: auto;
+  }
+}
+
 @media only screen and (min-width: 1140px) {
 
   /* ===============
@@ -411,6 +461,17 @@ a.need-url {
   .wrapper {
     width: 1026px; /* 1140px - 10% for margins */
     margin: 0 auto;
+  }
+
+  .speech-bubble-wrapper {
+    float: right;
+    width: 20%;
+    margin: 1em 2em 2em 2em;
+  }
+
+  .speech-bubble:after {
+    top: 30%;
+    bottom: auto;
   }
 }
 
